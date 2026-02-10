@@ -536,6 +536,26 @@ typedef enum _sai_port_link_training_rx_status_t
 } sai_port_link_training_rx_status_t;
 
 /**
+ * @brief Attribute data for #SAI_PORT_ATTR_PRBS_POLYNOMIAL
+ * PRBS polynomial to be used.
+ */
+typedef enum _sai_port_prbs_polynomial_t
+{
+    SAI_PORT_PRBS_POLYNOMIAL_NOTCONFIGURED,
+    SAI_PORT_PRBS_POLYNOMIAL_PRBS7,
+    SAI_PORT_PRBS_POLYNOMIAL_PRBS9,
+    SAI_PORT_PRBS_POLYNOMIAL_PRBS11,
+    SAI_PORT_PRBS_POLYNOMIAL_PRBS13,
+    SAI_PORT_PRBS_POLYNOMIAL_PRBS15,
+    SAI_PORT_PRBS_POLYNOMIAL_PRBS16,
+    SAI_PORT_PRBS_POLYNOMIAL_PRBS23,
+    SAI_PORT_PRBS_POLYNOMIAL_PRBS31,
+    SAI_PORT_PRBS_POLYNOMIAL_PRBS32,
+    SAI_PORT_PRBS_POLYNOMIAL_PRBS58
+
+} sai_port_prbs_polynomial_t;
+
+/**
  * @brief Attribute data for #SAI_PORT_ATTR_PRBS_CONFIG
  * PRBS configuration to enable transmitter, receiver or both
  */
@@ -1963,9 +1983,9 @@ typedef enum _sai_port_attr_t
     /**
      * @brief Port PRBS Polynomial
      *
-     * @type sai_uint32_t
+     * @type sai_uint32_t sai_port_prbs_polynomial_t
      * @flags CREATE_AND_SET
-     * @default internal
+     * @default SAI_PORT_PRBS_POLYNOMIAL_NOTCONFIGURED
      */
     SAI_PORT_ATTR_PRBS_POLYNOMIAL,
 
